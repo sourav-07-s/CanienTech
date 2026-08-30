@@ -5,10 +5,11 @@ body,
 #root {
   min-height: 100%;
   margin: 0;
-  background: #040c23;
+  background: #02103a;
   color: white;
 }
 
 html {
   scroll-behavior: smooth;
 }
+
