@@ -1,16 +1,78 @@
-# React + Vite
+# Canien Tech Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, responsive technology company website built with React, React Router, Tailwind CSS, and Lucide React.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project is an independent website redesign concept focused on:
 
-## React Compiler
+- Modern UI design
+- Responsive layouts
+- Reusable React components
+- Glassmorphism-inspired styling
+- Smooth scroll animations
+- Interactive forms
+- Clean component architecture
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the Oxlint configuration
+- Responsive navbar with mobile menu
+- Hero section with local background image
+- Services section with reusable cards
+- Animated statistics
+- Success stories section
+- Insights and innovation section
+- Careers page
+- Contact page with form validation
+- Employee login interface
+- Password show/hide functionality
+- Custom 404 page
+- Responsive footer
+- Lucide React icons
+- Page-specific SEO metadata
+- Accessibility-focused interactions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Tech Stack
+
+- React
+- React Router
+- Tailwind CSS
+- Lucide React
+- Vite
+- JavaScript
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── About/
+│   ├── Careers/
+│   ├── Contact/
+│   ├── Footer/
+│   ├── Home/
+│   ├── Insights/
+│   ├── Layout/
+│   ├── Login/
+│   ├── Navbar/
+│   ├── NotFound/
+│   ├── Services/
+│   ├── data/
+│   ├── hooks/
+│   └── ui/
+│
+├── pages/
+│   ├── Home.jsx
+│   ├── About.jsx
+│   ├── Services.jsx
+│   ├── Insights.jsx
+│   ├── Careers.jsx
+│   ├── Contact.jsx
+│   ├── Login.jsx
+│   └── NotFound.jsx
+│
+├── assets/
+├── App.jsx
+├── Router.jsx
+├── index.css
+└── main.jsx
