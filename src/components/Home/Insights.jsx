@@ -1,39 +1,49 @@
 import SectionHeading from "../ui/SectionHeading";
 import InsightCard from "./InsightCard";
-import { insights } from "../data/insights";
+import { insights } from "../../data/insights";
 
 const Insights = () => {
   return (
     <section
-      id="insights"
-      className="bg-[#030712] px-6 py-28"
+      className="
+        relative
+        overflow-hidden
+        bg-transparent
+        px-6
+        py-28
+      "
     >
-      <div className="mx-auto max-w-7xl">
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-0
+          top-1/3
+          h-96
+          w-96
+          rounded-full
+          bg-cyan-500/[0.04]
+          blur-[120px]
+        "
+      />
 
+      <div className="relative mx-auto max-w-7xl">
         <SectionHeading
           label="INSIGHTS & INNOVATION"
-          title="Latest Trends & Thought Leadership"
-          description="Explore ideas, technologies, and trends shaping the digital world."
+          line
+          title="Ideas Shaping the Digital Future"
+          description="Explore technology trends, digital strategies, and ideas that can help businesses stay ahead."
         />
 
-        <div className="
-          mt-16
-          grid
-          gap-6
-          md:grid-cols-2
-          lg:grid-cols-3
-        ">
-
-          {insights.map((item, index) => (
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {insights.map((insight, index) => (
             <InsightCard
-              key={item.id}
-              {...item}
-              delay={index * 100}
+              key={insight.id}
+              {...insight}
+              delay={index * 120}
             />
           ))}
-
         </div>
-
       </div>
     </section>
   );
