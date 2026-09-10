@@ -24,12 +24,12 @@ const NotFoundContent = () => {
           absolute
           left-1/2
           top-1/2
-          h-[420px]
-          w-[700px]
+          h-105
+          w-175
           -translate-x-1/2
           -translate-y-1/2
           rounded-full
-          bg-cyan-400/[0.06]
+          bg-cyan-400/6
           blur-[130px]
         "
       />
@@ -52,7 +52,7 @@ const NotFoundContent = () => {
           className="
             mx-auto
             mt-5
-            h-[2px]
+            h-0.5
             w-20
             rounded-full
             bg-cyan-300
@@ -136,7 +136,7 @@ const NotFoundContent = () => {
               rounded-full
               border
               border-white/15
-              bg-white/[0.04]
+              bg-white/[4
               px-7
               py-3.5
               text-sm
@@ -147,7 +147,7 @@ const NotFoundContent = () => {
               duration-300
               hover:-translate-y-1
               hover:border-white/30
-              hover:bg-white/[0.08]
+              hover:bg-white/8
               hover:text-white
             "
           >

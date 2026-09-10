@@ -67,8 +67,8 @@ const InsightsGrid = () => {
           absolute
           left-1/2
           top-1/3
-          h-[500px]
-          w-[800px]
+          h-125
+          w-200
           -translate-x-1/2
           rounded-full
           bg-cyan-500/[0.035]

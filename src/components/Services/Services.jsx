@@ -22,11 +22,11 @@ const Services = () => {
             left-1/2
             top-1/2
             h-96
-            w-[700px]
+            w-175
             -translate-x-1/2
             -translate-y-1/2
             rounded-full
-            bg-blue-500/[0.04]
+            bg-blue-500/4
             blur-[130px]
           "
         />

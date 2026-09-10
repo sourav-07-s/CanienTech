@@ -79,8 +79,8 @@ const CareersOpenings = () => {
           absolute
           left-1/2
           top-1/3
-          h-[500px]
-          w-[800px]
+          h-125
+          w-200
           -translate-x-1/2
           rounded-full
           bg-cyan-500/[0.035]
@@ -105,7 +105,7 @@ const CareersOpenings = () => {
           <div
             className="
               mt-3
-              h-[2px]
+              h-0.5
               w-16
               rounded-full
               bg-cyan-300

@@ -36,13 +36,13 @@ const ContactInfo = () => {
                 rounded-2xl
                 border
                 border-white/10
-                bg-white/[0.04]
+                bg-white/4
                 p-6
                 backdrop-blur-xl
                 transition-all
                 duration-300
                 hover:border-cyan-300/20
-                hover:bg-white/[0.06]
+                hover:bg-white/6
               "
             >
               <div className="flex items-start gap-4">

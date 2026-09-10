@@ -22,7 +22,7 @@ const Insights = () => {
           h-96
           w-96
           rounded-full
-          bg-cyan-500/[0.04]
+          bg-cyan-500/4
           blur-[120px]
         "
       />

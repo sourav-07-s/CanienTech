@@ -9,6 +9,7 @@ const LoginForm = () => {
 
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (event) => {
@@ -48,11 +49,20 @@ const LoginForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!validate()) return;
+    if (!validate()) {
+      return;
+    }
 
+    setIsSubmitting(true);
+    setSubmitted(false);
+
+    // Temporary frontend-only login simulation.
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    setIsSubmitting(false);
     setSubmitted(true);
   };
 
@@ -65,7 +75,7 @@ const LoginForm = () => {
         rounded-3xl
         border
         border-white/10
-        bg-white/[0.04]
+        bg-white/4
         p-6
         shadow-[0_20px_80px_rgba(0,0,0,0.25)]
         backdrop-blur-2xl
@@ -103,7 +113,7 @@ const LoginForm = () => {
             w-full
             rounded-xl
             border
-            bg-white/[0.04]
+            bg-white/4
             px-4
             py-3.5
             text-sm
@@ -112,7 +122,7 @@ const LoginForm = () => {
             placeholder:text-white/25
             transition-all
             duration-300
-            focus:bg-white/[0.06]
+            focus:bg-white/6
             focus:ring-1
             ${
               errors.email
@@ -171,13 +181,15 @@ const LoginForm = () => {
             placeholder="Enter your password"
             aria-invalid={Boolean(errors.password)}
             aria-describedby={
-              errors.password ? "login-password-error" : undefined
+              errors.password
+                ? "login-password-error"
+                : undefined
             }
             className={`
               w-full
               rounded-xl
               border
-              bg-white/[0.04]
+              bg-white/4
               px-4
               py-3.5
               pr-12
@@ -187,7 +199,7 @@ const LoginForm = () => {
               placeholder:text-white/25
               transition-all
               duration-300
-              focus:bg-white/[0.06]
+              focus:bg-white/6
               focus:ring-1
               ${
                 errors.password
@@ -271,13 +283,15 @@ const LoginForm = () => {
             text-emerald-300
           "
         >
-          Form validated successfully. Authentication is not connected yet.
+          Login form validated successfully. Authentication is not
+          connected yet.
         </div>
       )}
 
       {/* Submit */}
       <button
         type="submit"
+        disabled={isSubmitting}
         className="
           group
           mt-7
@@ -285,6 +299,7 @@ const LoginForm = () => {
           w-full
           items-center
           justify-center
+          gap-2
           rounded-xl
           border
           border-cyan-300/25
@@ -300,21 +315,46 @@ const LoginForm = () => {
           hover:bg-cyan-400/20
           hover:text-white
           hover:shadow-[0_0_30px_rgba(34,211,238,0.12)]
+          disabled:cursor-not-allowed
+          disabled:opacity-50
+          disabled:hover:shadow-none
         "
       >
-        Sign In
+        {isSubmitting ? (
+          <>
+            <span
+              aria-hidden="true"
+              className="
+                h-4
+                w-4
+                animate-spin
+                rounded-full
+                border-2
+                border-cyan-300/30
+                border-t-cyan-300
+              "
+            />
 
-        <ArrowRight
-          size={17}
-          className="
-            ml-2
-            transition-transform
-            duration-300
-            group-hover:translate-x-1
-          "
-        />
+            Signing In...
+          </>
+        ) : (
+          <>
+            Sign In
+
+            <ArrowRight
+              size={17}
+              strokeWidth={1.8}
+              className="
+                transition-transform
+                duration-300
+                group-hover:translate-x-1
+              "
+            />
+          </>
+        )}
       </button>
 
+      {/* Security Note */}
       <div className="mt-6 border-t border-white/10 pt-5 text-center">
         <p className="text-xs leading-6 text-white/25">
           Authorized employees only. Please keep your login

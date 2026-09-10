@@ -19,7 +19,7 @@ const JobCard = ({
           rounded-3xl
           border
           border-white/10
-          bg-white/[0.04]
+          bg-white/4
           p-7
           backdrop-blur-xl
           transition-all
@@ -42,7 +42,7 @@ const JobCard = ({
             blur-3xl
             transition-all
             duration-500
-            group-hover:bg-cyan-400/[0.13]
+            group-hover:bg-cyan-400/13
           "
         />
 
@@ -52,7 +52,7 @@ const JobCard = ({
               rounded-full
               border
               border-cyan-300/20
-              bg-cyan-300/[0.06]
+              bg-cyan-300/6
               px-3
               py-1
               text-[10px]
@@ -70,7 +70,7 @@ const JobCard = ({
               rounded-full
               border
               border-white/10
-              bg-white/[0.04]
+              bg-white/4
               px-3
               py-1
               text-[10px]
@@ -137,7 +137,7 @@ const JobCard = ({
                   rounded-lg
                   border
                   border-white/10
-                  bg-white/[0.03]
+                  bg-white/3
                   px-3
                   py-1.5
                   text-xs

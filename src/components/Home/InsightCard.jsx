@@ -24,7 +24,7 @@ const InsightCard = ({
           duration-500
           hover:-translate-y-2
           hover:border-cyan-300/25
-          hover:bg-white/[0.06]
+          hover:bg-white/6
         "
       >
         <div
@@ -50,7 +50,7 @@ const InsightCard = ({
               rounded-full
               border
               border-cyan-300/20
-              bg-cyan-300/[0.06]
+              bg-cyan-300/6
               px-3
               py-1
               text-[10px]

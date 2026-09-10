@@ -39,7 +39,7 @@ const LoginHero = () => {
         className="
           mx-auto
           mt-4
-          h-[2px]
+          h-0.5
           w-16
           rounded-full
           bg-cyan-300

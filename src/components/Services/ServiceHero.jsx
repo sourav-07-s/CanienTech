@@ -17,7 +17,7 @@ const ServiceHero = () => {
           left-1/2
           top-20
           h-96
-          w-[700px]
+          w-175
           -translate-x-1/2
           rounded-full
           bg-cyan-400/[0.07]
@@ -43,7 +43,7 @@ const ServiceHero = () => {
           className="
             mx-auto
             mt-4
-            h-[2px]
+            h-0.5
             w-20
             rounded-full
             bg-cyan-300

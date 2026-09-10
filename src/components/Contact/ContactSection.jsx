@@ -17,8 +17,8 @@ const ContactSection = () => {
           absolute
           left-1/2
           top-1/2
-          h-[500px]
-          w-[800px]
+          h-125
+          w-200
           -translate-x-1/2
           -translate-y-1/2
           rounded-full
@@ -45,7 +45,7 @@ const ContactSection = () => {
           <div
             className="
               mt-3
-              h-[2px]
+              h-0.5
               w-16
               rounded-full
               bg-cyan-300

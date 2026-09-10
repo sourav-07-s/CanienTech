@@ -12,7 +12,7 @@ const AboutStory = () => {
           h-96
           w-96
           rounded-full
-          bg-blue-500/[0.05]
+          bg-blue-500/
           blur-[120px]
         "
       />
@@ -45,7 +45,7 @@ const AboutStory = () => {
             <div
               className="
                 mt-4
-                h-[2px]
+                h-0.5
                 w-16
                 rounded-full
                 bg-cyan-300
@@ -103,10 +103,10 @@ const AboutStory = () => {
               group
               relative
               overflow-hidden
-              rounded-[2rem]
+              rounded-4xl
               border
               border-white/10
-              bg-white/[0.04]
+              bg-white/4
               p-8
               backdrop-blur-2xl
             "
@@ -120,7 +120,7 @@ const AboutStory = () => {
                 h-48
                 w-48
                 rounded-full
-                bg-cyan-400/[0.08]
+                bg-cyan-400/8
                 blur-3xl
                 transition-all
                 duration-500

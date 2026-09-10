@@ -16,8 +16,8 @@ const InsightsHero = () => {
           absolute
           left-1/2
           top-10
-          h-[420px]
-          w-[720px]
+          h-105
+          w-180
           -translate-x-1/2
           rounded-full
           bg-cyan-400/[0.07]
@@ -43,7 +43,7 @@ const InsightsHero = () => {
           className="
             mx-auto
             mt-4
-            h-[2px]
+            h-0.5
             w-20
             rounded-full
             bg-cyan-300

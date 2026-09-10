@@ -18,7 +18,7 @@ const StatCard = ({
           rounded-2xl
           border
           border-white/10
-          bg-white/[0.04]
+          bg-white/4
           px-6
           py-8
           text-center

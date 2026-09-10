@@ -32,7 +32,7 @@ const Navbar = () => {
           rounded-full
           border
           border-white/15
-          bg-white/[0.08]
+          bg-white/8
           px-3
           py-2
           shadow-[0_8px_35px_rgba(0,0,0,0.25)]
@@ -151,7 +151,7 @@ const Navbar = () => {
               rounded-full
               border
               border-white/10
-              bg-white/[0.05]
+              bg-white/5
               text-white/80
               transition-all
               duration-300
@@ -200,7 +200,7 @@ const Navbar = () => {
     lg:hidden
     ${
       menuOpen
-        ? "max-h-[500px] pt-3 opacity-100"
+        ? "max-h-125 pt-3 opacity-100"
         : "max-h-0 opacity-0"
     }
   `}

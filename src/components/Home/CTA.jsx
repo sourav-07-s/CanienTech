@@ -19,11 +19,11 @@ const CTA = () => {
           left-1/2
           top-1/2
           h-96
-          w-[700px]
+          w-175
           -translate-x-1/2
           -translate-y-1/2
           rounded-full
-          bg-cyan-400/[0.08]
+          bg-cyan-400/8
           blur-[130px]
         "
       />
@@ -33,10 +33,10 @@ const CTA = () => {
           className="
             relative
             overflow-hidden
-            rounded-[2rem]
+            rounded-4xl
             border
             border-white/10
-            bg-white/[0.045]
+            bg-white/4.5
             px-6
             py-16
             text-center
@@ -155,7 +155,7 @@ const CTA = () => {
                 rounded-full
                 border
                 border-white/15
-                bg-white/[0.04]
+                bg-white/4
                 px-8
                 py-4
                 font-semibold
@@ -165,7 +165,7 @@ const CTA = () => {
                 duration-300
                 hover:-translate-y-1
                 hover:border-white/30
-                hover:bg-white/[0.08]
+                hover:bg-white/8
               "
             >
               Explore Services

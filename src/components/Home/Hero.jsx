@@ -31,7 +31,7 @@ const Hero = () => {
         className="
           absolute
           inset-0
-          bg-gradient-to-b
+          bg-linear-to-b
           from-blue-950/50
           via-[#030712]/20
           to-[#030712]
@@ -45,8 +45,8 @@ const Hero = () => {
           absolute
           left-1/2
           top-1/2
-          h-[450px]
-          w-[700px]
+          h-112.5
+          w-175
           -translate-x-1/2
           -translate-y-1/2
           rounded-full
@@ -189,7 +189,7 @@ const Hero = () => {
                 rounded-full
                 border
                 border-white/20
-                bg-white/[0.05]
+                bg-white/5
                 px-8
                 py-4
                 font-semibold
@@ -217,7 +217,7 @@ const Hero = () => {
           left-0
           h-40
           w-full
-          bg-gradient-to-t
+          bg-linear-to-t
           from-[#030712]
           to-transparent
         "
@@ -253,7 +253,7 @@ const Hero = () => {
             mt-2
             h-8
             w-px
-            bg-gradient-to-b
+            bg-linear-to-b
             from-cyan-300
             to-transparent
           "

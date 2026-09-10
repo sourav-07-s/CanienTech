@@ -29,7 +29,7 @@ const SectionHeading = ({
         <div
           className={`
             mt-4
-            h-[2px]
+            h-0.5
             w-20
             rounded-full
             bg-cyan-300

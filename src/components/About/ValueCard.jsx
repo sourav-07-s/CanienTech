@@ -16,7 +16,7 @@ const ValueCard = ({
           rounded-2xl
           border
           border-white/10
-          bg-white/[0.04]
+          bg-white/4
           p-7
           backdrop-blur-xl
           transition-all
@@ -34,11 +34,11 @@ const ValueCard = ({
             h-28
             w-28
             rounded-full
-            bg-cyan-400/[0.06]
+            bg-cyan-400/6
             blur-3xl
             transition-all
             duration-500
-            group-hover:bg-cyan-400/[0.12]
+            group-hover:bg-cyan-400/12
           "
         />
 

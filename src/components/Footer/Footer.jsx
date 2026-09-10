@@ -302,7 +302,7 @@ const SocialIcon = ({ label, name, href }) => {
         rounded-full
         border
         border-white/10
-        bg-white/[0.04]
+        bg-white/4
         text-[10px]
         font-semibold
         text-white/50

@@ -17,7 +17,7 @@ const InsightArticleCard = ({
           rounded-3xl
           border
           border-white/10
-          bg-white/[0.04]
+          bg-white/4
           backdrop-blur-xl
           transition-all
           duration-500
@@ -74,7 +74,7 @@ const InsightArticleCard = ({
             className="
               absolute
               inset-0
-              bg-gradient-to-t
+              bg-linear-to-t
               from-[#030712]
               via-transparent
               to-transparent

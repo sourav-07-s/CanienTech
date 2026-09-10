@@ -90,7 +90,7 @@ const ContactForm = () => {
         rounded-3xl
         border
         border-white/10
-        bg-white/[0.04]
+        bg-white/4
         p-6
         backdrop-blur-2xl
         sm:p-8
@@ -129,7 +129,7 @@ const ContactForm = () => {
               w-full
               rounded-xl
               border
-              bg-white/[0.04]
+              bg-white/4
               px-4
               py-3.5
               text-sm
@@ -138,7 +138,7 @@ const ContactForm = () => {
               placeholder:text-white/25
               transition-all
               duration-300
-              focus:bg-white/[0.06]
+              focus:bg-white/6
               focus:ring-1
               ${
                 errors.name
@@ -189,7 +189,7 @@ const ContactForm = () => {
               w-full
               rounded-xl
               border
-              bg-white/[0.04]
+              bg-white/4
               px-4
               py-3.5
               text-sm
@@ -198,7 +198,7 @@ const ContactForm = () => {
               placeholder:text-white/25
               transition-all
               duration-300
-              focus:bg-white/[0.06]
+              focus:bg-white/6
               focus:ring-1
               ${
                 errors.email
@@ -249,7 +249,7 @@ const ContactForm = () => {
             w-full
             rounded-xl
             border
-            bg-white/[0.04]
+            bg-white/4
             px-4
             py-3.5
             text-sm
@@ -258,7 +258,7 @@ const ContactForm = () => {
             placeholder:text-white/25
             transition-all
             duration-300
-            focus:bg-white/[0.06]
+            focus:bg-white/6
             focus:ring-1
             ${
               errors.subject
@@ -309,7 +309,7 @@ const ContactForm = () => {
             resize-none
             rounded-xl
             border
-            bg-white/[0.04]
+            bg-white/4
             px-4
             py-3.5
             text-sm
@@ -318,7 +318,7 @@ const ContactForm = () => {
             placeholder:text-white/25
             transition-all
             duration-300
-            focus:bg-white/[0.06]
+            focus:bg-white/6
             focus:ring-1
             ${
               errors.message
