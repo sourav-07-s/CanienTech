@@ -1,18 +1,71 @@
 @import "tailwindcss";
 
-html,
-body,
-#root {
-  min-height: 100%;
-  margin: 0;
-  background: #02103a;
-  color: white;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background: #030712;
+  color: white;
+}
+
+/* Global ambient background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(34, 211, 238, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(59, 130, 246, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(34, 211, 238, 0.05),
+      transparent 30%
+    );
+}
+
+/* Very subtle dark layer */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(3, 7, 18, 0.2),
+      rgba(3, 7, 18, 0.75)
+    );
+}
+
+/* Selection */
+::selection {
+  background: rgba(34, 211, 238, 0.25);
+  color: white;
+}
+
+/* Keyboard accessibility */
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
@@ -20,4 +73,20 @@ textarea:focus-visible,
 select:focus-visible {
   outline: 2px solid #22d3ee;
   outline-offset: 3px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

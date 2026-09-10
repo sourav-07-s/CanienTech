@@ -11,6 +11,7 @@ const ContactForm = () => {
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -48,7 +49,8 @@ const ContactForm = () => {
     if (!formData.message.trim()) {
       newErrors.message = "Message is required.";
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = "Message must be at least 10 characters.";
+      newErrors.message =
+        "Message must be at least 10 characters.";
     }
 
     setErrors(newErrors);
@@ -56,11 +58,20 @@ const ContactForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!validate()) return;
+    if (!validate()) {
+      return;
+    }
 
+    setIsSubmitting(true);
+    setSubmitted(false);
+
+    // Temporary frontend-only submission simulation.
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    setIsSubmitting(false);
     setSubmitted(true);
 
     setFormData({
@@ -85,12 +96,19 @@ const ContactForm = () => {
         sm:p-8
       "
     >
+      {/* Name + Email */}
       <div className="grid gap-5 sm:grid-cols-2">
         {/* Name */}
         <div>
           <label
             htmlFor="name"
-            className="mb-2 block text-sm font-medium text-white/65"
+            className="
+              mb-2
+              block
+              text-sm
+              font-medium
+              text-white/65
+            "
           >
             Name
           </label>
@@ -102,8 +120,11 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Your name"
+            autoComplete="name"
             aria-invalid={Boolean(errors.name)}
-            aria-describedby={errors.name ? "name-error" : undefined}
+            aria-describedby={
+              errors.name ? "name-error" : undefined
+            }
             className={`
               w-full
               rounded-xl
@@ -141,7 +162,13 @@ const ContactForm = () => {
         <div>
           <label
             htmlFor="email"
-            className="mb-2 block text-sm font-medium text-white/65"
+            className="
+              mb-2
+              block
+              text-sm
+              font-medium
+              text-white/65
+            "
           >
             Email
           </label>
@@ -153,8 +180,11 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             placeholder="you@example.com"
+            autoComplete="email"
             aria-invalid={Boolean(errors.email)}
-            aria-describedby={errors.email ? "email-error" : undefined}
+            aria-describedby={
+              errors.email ? "email-error" : undefined
+            }
             className={`
               w-full
               rounded-xl
@@ -193,7 +223,13 @@ const ContactForm = () => {
       <div className="mt-5">
         <label
           htmlFor="subject"
-          className="mb-2 block text-sm font-medium text-white/65"
+          className="
+            mb-2
+            block
+            text-sm
+            font-medium
+            text-white/65
+          "
         >
           Subject
         </label>
@@ -246,7 +282,13 @@ const ContactForm = () => {
       <div className="mt-5">
         <label
           htmlFor="message"
-          className="mb-2 block text-sm font-medium text-white/65"
+          className="
+            mb-2
+            block
+            text-sm
+            font-medium
+            text-white/65
+          "
         >
           Message
         </label>
@@ -296,7 +338,7 @@ const ContactForm = () => {
         )}
       </div>
 
-      {/* Success */}
+      {/* Success Message */}
       {submitted && (
         <div
           role="status"
@@ -316,9 +358,10 @@ const ContactForm = () => {
         </div>
       )}
 
-      {/* Submit */}
+      {/* Submit Button */}
       <button
         type="submit"
+        disabled={isSubmitting}
         className="
           group
           mt-6
@@ -342,19 +385,43 @@ const ContactForm = () => {
           hover:bg-cyan-400/20
           hover:text-white
           hover:shadow-[0_0_30px_rgba(34,211,238,0.12)]
+          disabled:cursor-not-allowed
+          disabled:opacity-50
+          disabled:hover:shadow-none
         "
       >
-        Send Message
+        {isSubmitting ? (
+          <>
+            <span
+              aria-hidden="true"
+              className="
+                h-4
+                w-4
+                animate-spin
+                rounded-full
+                border-2
+                border-cyan-300/30
+                border-t-cyan-300
+              "
+            />
 
-        <Send
-          size={17}
-          strokeWidth={1.8}
-          className="
-            transition-transform
-            duration-300
-            group-hover:translate-x-1
-          "
-        />
+            Sending...
+          </>
+        ) : (
+          <>
+            Send Message
+
+            <Send
+              size={17}
+              strokeWidth={1.8}
+              className="
+                transition-transform
+                duration-300
+                group-hover:translate-x-1
+              "
+            />
+          </>
+        )}
       </button>
     </form>
   );

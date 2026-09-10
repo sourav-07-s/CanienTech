@@ -4,10 +4,10 @@ import Footer from "../Footer/Footer";
 
 export const Layout = () => {
   return (
-    <div >
+    <div className="min-h-screen bg-transparent text-white">
       <Navbar />
 
-      <main>
+      <main >
         <Outlet />
       </main>
 
