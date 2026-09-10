@@ -3,6 +3,7 @@ import Services from "../components/home/Services";
 import Stats from "../components/home/Stats";
 import SuccessStories from "../components/home/SuccessStories";
 import Insights from "../components/home/Insights";
+import CTA from "../components/Home/CTA";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Stats />
       <SuccessStories />
       <Insights />
+      <CTA />
     </>
   );
 };
