@@ -1,36 +1,19 @@
 import ServiceHero from "../components/Services/ServiceHero";
 import ServiceDetailCard from "../components/Services/ServiceDetailCard";
 import { serviceDetails } from "../components/data/serviceDetails";
+import usePageMeta from "../components/hooks/usePageMeta";
 
 export const Services = () => {
+  usePageMeta(
+    "Services | Canien Tech",
+    "Explore Canien Tech services across cloud solutions, AI, cybersecurity, digital marketing, enterprise solutions, and digital engineering."
+  );
+
   return (
     <>
       <ServiceHero />
 
-      <section
-        className="
-          relative
-          overflow-hidden
-          px-6
-          pb-28
-        "
-      >
-        <div
-          className="
-            pointer-events-none
-            absolute
-            left-1/2
-            top-1/2
-            h-96
-            w-[700px]
-            -translate-x-1/2
-            -translate-y-1/2
-            rounded-full
-            bg-blue-500/[0.04]
-            blur-[130px]
-          "
-        />
-
+      <section className="relative overflow-hidden px-6 pb-28">
         <div className="relative mx-auto max-w-7xl">
           <div className="grid gap-6 md:grid-cols-2">
             {serviceDetails.map((service, index) => (
