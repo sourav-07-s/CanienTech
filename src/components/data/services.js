@@ -1,44 +1,44 @@
 export const services = [
   {
     id: 1,
+    icon: "☁",
     title: "Cloud Solutions",
     description:
-      "Scalable cloud infrastructure and migration services.",
-    icon: "☁",
+      "Scalable cloud infrastructure and migration services to modernize business operations.",
   },
   {
     id: 2,
+    icon: "◉",
     title: "AI & Data Analytics",
     description:
-      "Turn data into smarter business decisions.",
-    icon: "◉",
+      "Turn data into actionable insights and make smarter business decisions.",
   },
   {
     id: 3,
+    icon: "🛡",
     title: "Cybersecurity",
     description:
-      "Protect your digital infrastructure and data.",
-    icon: "🛡",
+      "Protect your digital infrastructure with modern security solutions.",
   },
   {
     id: 4,
+    icon: "📣",
     title: "Digital Marketing",
     description:
-      "Grow your online presence and reach.",
-    icon: "📣",
+      "Build your digital presence and reach the right audience.",
   },
   {
     id: 5,
+    icon: "⌨",
     title: "Enterprise Solutions",
     description:
-      "Custom solutions for complex business needs.",
-    icon: "⌨",
+      "Custom technology solutions designed around your business needs.",
   },
   {
     id: 6,
+    icon: "🚀",
     title: "Digital Engineering",
     description:
-      "Build scalable and modern digital products.",
-    icon: "🚀",
+      "Build modern, scalable web and mobile digital products.",
   },
 ];

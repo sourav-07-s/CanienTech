@@ -1,36 +1,55 @@
+import Reveal from "../ui/Reveal";
 import useCountUp from "../hooks/useCountUp";
 
-const StatCard = ({ value, suffix = "", label, visible, delay }) => {
-  const count = useCountUp(value, 1500, visible);
+const StatCard = ({
+  value,
+  suffix,
+  label,
+  delay = 0,
+}) => {
+  const { ref, count } = useCountUp(value);
 
   return (
-    <div
-      className={`
-        transition-all
-        duration-700
-
-        ${visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}
-      `}
-      style={{
-        transitionDelay: `${delay}ms`,
-      }}
-    >
-      <h3 className="text-4xl font-bold sm:text-5xl">
-        {count}
-        {suffix}
-      </h3>
-
-      <p
+    <Reveal delay={delay}>
+      <div
+        ref={ref}
         className="
-        mt-4
-        text-sm
-        text-blue-100/65
-        sm:text-base
-      "
+          group
+          rounded-2xl
+          border
+          border-white/10
+          bg-white/[0.04]
+          px-6
+          py-8
+          text-center
+          backdrop-blur-xl
+          transition-all
+          duration-500
+          hover:-translate-y-1
+          hover:border-cyan-300/20
+          hover:bg-white/[0.07]
+        "
       >
-        {label}
-      </p>
-    </div>
+        <div
+          className="
+            text-4xl
+            font-bold
+            tracking-tight
+            text-white
+            transition-all
+            duration-300
+            group-hover:text-cyan-300
+          "
+        >
+          {count}
+          {suffix}
+        </div>
+
+        <p className="mt-3 text-sm text-white/45">
+          {label}
+        </p>
+      </div>
+    </Reveal>
   );
 };
 

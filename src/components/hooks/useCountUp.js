@@ -1,51 +1,58 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const useCountUp = (
-  end,
-  duration = 1500,
-  startAnimation = true
-) => {
+const useCountUp = (end, duration = 1800) => {
   const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef(null);
 
   useEffect(() => {
-    if (!startAnimation) return;
+    const element = ref.current;
 
-    let start = 0;
-    let animationFrame;
-    const startTime = performance.now();
+    if (!element) return;
 
-    const update = (currentTime) => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started) {
+          setStarted(true);
+          observer.unobserve(element);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [started]);
+
+  useEffect(() => {
+    if (!started) return;
+
+    let startTime = null;
+
+    const animate = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+
       const progress = Math.min(
         (currentTime - startTime) / duration,
         1
       );
 
-      const easedProgress =
-        1 - Math.pow(1 - progress, 3);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
 
-      const currentValue = Math.floor(
-        easedProgress * end
-      );
-
-      setCount(currentValue);
+      setCount(Math.floor(easedProgress * end));
 
       if (progress < 1) {
-        animationFrame =
-          requestAnimationFrame(update);
+        requestAnimationFrame(animate);
       } else {
         setCount(end);
       }
     };
 
-    animationFrame =
-      requestAnimationFrame(update);
+    requestAnimationFrame(animate);
+  }, [started, end, duration]);
 
-    return () => {
-      cancelAnimationFrame(animationFrame);
-    };
-  }, [end, duration, startAnimation]);
-
-  return count;
+  return { ref, count };
 };
 
 export default useCountUp;

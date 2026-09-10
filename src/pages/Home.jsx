@@ -1,20 +1,17 @@
-import Hero from "../components/Home/Hero";
-import Services from "../components/Home/Services";
-import Stats from "../components/Home/Stats";
+import Hero from "../components/home/Hero";
+import Services from "../components/home/Services";
+import Stats from "../components/home/Stats";
 import SuccessStories from "../components/home/SuccessStories";
-import Insights from "../components/home/Insights";
-import CTA from "../components/home/CTA";
 
- export const Home = () => {
+const Home = () => {
   return (
     <>
       <Hero />
       <Services />
       <Stats />
       <SuccessStories />
-      <Insights />
-      <CTA />
     </>
   );
 };
 
+export default Home;

@@ -1,17 +1,19 @@
 export const stats = [
   {
     id: 1,
-    value: 218,
-    label: "Clients Worldwide",
+    value: 200,
+    suffix: "+",
+    label: "Clients",
   },
   {
     id: 2,
-    value: 522,
-    label: "Projects Completed",
+    value: 500,
+    suffix: "+",
+    label: "Projects Delivered",
   },
   {
     id: 3,
-    value: 43,
+    value: 95,
     suffix: "%",
     label: "Client Satisfaction",
   },
@@ -19,6 +21,6 @@ export const stats = [
     id: 4,
     value: 4,
     suffix: "+",
-    label: "Years of Excellence",
+    label: "Years of Experience",
   },
 ];
