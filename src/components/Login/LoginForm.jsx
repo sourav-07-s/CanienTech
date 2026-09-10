@@ -2,15 +2,64 @@ import { useState } from "react";
 import { Eye, EyeOff, ArrowRight } from "lucide-react";
 
 const LoginForm = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
+
+    setSubmitted(false);
+  };
+
+  const validate = () => {
+    const newErrors = {};
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address.";
+    }
+
+    if (!formData.password) {
+      newErrors.password = "Password is required.";
+    } else if (formData.password.length < 6) {
+      newErrors.password =
+        "Password must be at least 6 characters.";
+    }
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (!validate()) return;
+
+    setSubmitted(true);
   };
 
   return (
     <form
       onSubmit={handleSubmit}
+      noValidate
       className="
         mt-8
         rounded-3xl
@@ -27,7 +76,13 @@ const LoginForm = () => {
       <div>
         <label
           htmlFor="email"
-          className="mb-2 block text-sm font-medium text-white/65"
+          className="
+            mb-2
+            block
+            text-sm
+            font-medium
+            text-white/65
+          "
         >
           Email Address
         </label>
@@ -37,12 +92,17 @@ const LoginForm = () => {
           name="email"
           type="email"
           autoComplete="email"
+          value={formData.email}
+          onChange={handleChange}
           placeholder="Enter your email"
-          className="
+          aria-invalid={Boolean(errors.email)}
+          aria-describedby={
+            errors.email ? "login-email-error" : undefined
+          }
+          className={`
             w-full
             rounded-xl
             border
-            border-white/10
             bg-white/[0.04]
             px-4
             py-3.5
@@ -52,12 +112,24 @@ const LoginForm = () => {
             placeholder:text-white/25
             transition-all
             duration-300
-            focus:border-cyan-300/40
             focus:bg-white/[0.06]
             focus:ring-1
-            focus:ring-cyan-300/20
-          "
+            ${
+              errors.email
+                ? "border-red-400/40 focus:border-red-400/50 focus:ring-red-400/20"
+                : "border-white/10 focus:border-cyan-300/40 focus:ring-cyan-300/20"
+            }
+          `}
         />
+
+        {errors.email && (
+          <p
+            id="login-email-error"
+            className="mt-2 text-xs text-red-300"
+          >
+            {errors.email}
+          </p>
+        )}
       </div>
 
       {/* Password */}
@@ -65,7 +137,11 @@ const LoginForm = () => {
         <div className="mb-2 flex items-center justify-between">
           <label
             htmlFor="password"
-            className="text-sm font-medium text-white/65"
+            className="
+              text-sm
+              font-medium
+              text-white/65
+            "
           >
             Password
           </label>
@@ -90,12 +166,17 @@ const LoginForm = () => {
             name="password"
             type={showPassword ? "text" : "password"}
             autoComplete="current-password"
+            value={formData.password}
+            onChange={handleChange}
             placeholder="Enter your password"
-            className="
+            aria-invalid={Boolean(errors.password)}
+            aria-describedby={
+              errors.password ? "login-password-error" : undefined
+            }
+            className={`
               w-full
               rounded-xl
               border
-              border-white/10
               bg-white/[0.04]
               px-4
               py-3.5
@@ -106,11 +187,14 @@ const LoginForm = () => {
               placeholder:text-white/25
               transition-all
               duration-300
-              focus:border-cyan-300/40
               focus:bg-white/[0.06]
               focus:ring-1
-              focus:ring-cyan-300/20
-            "
+              ${
+                errors.password
+                  ? "border-red-400/40 focus:border-red-400/50 focus:ring-red-400/20"
+                  : "border-white/10 focus:border-cyan-300/40 focus:ring-cyan-300/20"
+              }
+            `}
           />
 
           <button
@@ -143,6 +227,15 @@ const LoginForm = () => {
             )}
           </button>
         </div>
+
+        {errors.password && (
+          <p
+            id="login-password-error"
+            className="mt-2 text-xs text-red-300"
+          >
+            {errors.password}
+          </p>
+        )}
       </div>
 
       {/* Remember */}
@@ -161,6 +254,26 @@ const LoginForm = () => {
           Remember me
         </label>
       </div>
+
+      {/* Success */}
+      {submitted && (
+        <div
+          role="status"
+          className="
+            mt-5
+            rounded-xl
+            border
+            border-emerald-300/20
+            bg-emerald-400/10
+            px-4
+            py-3
+            text-sm
+            text-emerald-300
+          "
+        >
+          Form validated successfully. Authentication is not connected yet.
+        </div>
+      )}
 
       {/* Submit */}
       <button
@@ -202,7 +315,6 @@ const LoginForm = () => {
         />
       </button>
 
-      {/* Security note */}
       <div className="mt-6 border-t border-white/10 pt-5 text-center">
         <p className="text-xs leading-6 text-white/25">
           Authorized employees only. Please keep your login
