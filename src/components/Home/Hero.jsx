@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import heroBg from "../../assets/hero-bg.png";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#030712]">
-
-      {/* Background Image */}
+      {/* Hero Background */}
       <div
+        aria-hidden="true"
         className="
           absolute
           inset-0
@@ -14,125 +15,138 @@ const Hero = () => {
           scale-105
         "
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=2200&q=90')",
+          backgroundImage: `url(${heroBg})`,
         }}
       />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      {/* Overlay */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-black/55"
+      />
 
-      {/* Blue gradient */}
-      <div className="
-        absolute
-        inset-0
-        bg-gradient-to-b
-        from-blue-950/60
-        via-black/20
-        to-[#030712]
-      " />
+      {/* Blue Gradient */}
+      <div
+        aria-hidden="true"
+        className="
+          absolute
+          inset-0
+          bg-gradient-to-b
+          from-blue-950/50
+          via-[#030712]/20
+          to-[#030712]
+        "
+      />
 
-      {/* Ambient cyan glow */}
-      <div className="
-        absolute
-        left-1/2
-        top-1/2
-        h-[450px]
-        w-[700px]
-        -translate-x-1/2
-        -translate-y-1/2
-        rounded-full
-        bg-cyan-400/10
-        blur-[140px]
-      " />
+      {/* Ambient Glow */}
+      <div
+        aria-hidden="true"
+        className="
+          absolute
+          left-1/2
+          top-1/2
+          h-[450px]
+          w-[700px]
+          -translate-x-1/2
+          -translate-y-1/2
+          rounded-full
+          bg-cyan-400/10
+          blur-[140px]
+        "
+      />
 
       {/* Content */}
-      <div className="
-        relative
-        z-10
-        mx-auto
-        flex
-        min-h-screen
-        max-w-6xl
-        items-center
-        justify-center
-        px-6
-        pt-24
-        text-center
-      ">
-
+      <div
+        className="
+          relative
+          z-10
+          mx-auto
+          flex
+          min-h-screen
+          max-w-6xl
+          items-center
+          justify-center
+          px-6
+          pt-24
+          text-center
+        "
+      >
         <div className="max-w-5xl">
-
-          {/* Small heading */}
-          <p className="
-            text-xs
-            font-medium
-            uppercase
-            tracking-[0.4em]
-            text-cyan-300
-            sm:text-sm
-          ">
+          <p
+            className="
+              text-xs
+              font-medium
+              uppercase
+              tracking-[0.4em]
+              text-cyan-300
+              sm:text-sm
+            "
+          >
             CANIEN TECH
           </p>
 
-          {/* Main heading */}
-          <h1 className="
-            mt-6
-            text-4xl
-            font-bold
-            leading-tight
-            text-white
-            sm:text-5xl
-            md:text-6xl
-            lg:text-7xl
-          ">
+          <h1
+            className="
+              mt-6
+              text-4xl
+              font-bold
+              leading-tight
+              text-white
+              sm:text-5xl
+              md:text-6xl
+              lg:text-7xl
+            "
+          >
             Empowering{" "}
-
-            <span className="
-              text-cyan-300
-              drop-shadow-[0_0_15px_rgba(34,211,238,0.45)]
-            ">
+            <span
+              className="
+                text-cyan-300
+                drop-shadow-[0_0_15px_rgba(34,211,238,0.45)]
+              "
+            >
               Digital Transformation
             </span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="
-            mt-6
-            text-xl
-            font-medium
-            text-white/90
-            sm:text-2xl
-          ">
+          <p
+            className="
+              mt-6
+              text-xl
+              font-medium
+              text-white/90
+              sm:text-2xl
+            "
+          >
             The Future of Business is Digital
           </p>
 
-          {/* Description */}
-          <p className="
-            mx-auto
-            mt-7
-            max-w-3xl
-            text-base
-            leading-8
-            text-white/60
-            sm:text-lg
-          ">
+          <p
+            className="
+              mx-auto
+              mt-7
+              max-w-3xl
+              text-base
+              leading-8
+              text-white/60
+              sm:text-lg
+            "
+          >
             We help businesses evolve confidently through innovative
             technology solutions, digital engineering, AI, cloud,
             cybersecurity, and digital marketing.
           </p>
 
-          {/* Buttons */}
-          <div className="
-            mt-10
-            flex
-            flex-col
-            items-center
-            justify-center
-            gap-4
-            sm:flex-row
-          ">
-
+          <div
+            className="
+              mt-10
+              flex
+              flex-col
+              items-center
+              justify-center
+              gap-4
+              sm:flex-row
+            "
+          >
             <Link
               to="/services"
               className="
@@ -156,13 +170,15 @@ const Hero = () => {
             >
               Explore Our Services
 
-              <span className="
-                ml-2
-                inline-block
-                transition-transform
-                duration-300
-                group-hover:translate-x-1
-              ">
+              <span
+                className="
+                  ml-2
+                  inline-block
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+              >
                 →
               </span>
             </Link>
@@ -188,54 +204,61 @@ const Hero = () => {
             >
               Get Started
             </Link>
-
           </div>
-
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="
-        absolute
-        bottom-0
-        left-0
-        h-40
-        w-full
-        bg-gradient-to-t
-        from-[#030712]
-        to-transparent
-      " />
+      {/* Bottom Fade */}
+      <div
+        aria-hidden="true"
+        className="
+          absolute
+          bottom-0
+          left-0
+          h-40
+          w-full
+          bg-gradient-to-t
+          from-[#030712]
+          to-transparent
+        "
+      />
 
-      {/* Scroll indicator */}
-      <div className="
-        absolute
-        bottom-7
-        left-1/2
-        hidden
-        -translate-x-1/2
-        flex-col
-        items-center
-        md:flex
-      ">
-        <span className="
-          text-[10px]
-          uppercase
-          tracking-[0.3em]
-          text-white/35
-        ">
+      {/* Scroll Indicator */}
+      <div
+        className="
+          absolute
+          bottom-7
+          left-1/2
+          hidden
+          -translate-x-1/2
+          flex-col
+          items-center
+          md:flex
+        "
+      >
+        <span
+          className="
+            text-[10px]
+            uppercase
+            tracking-[0.3em]
+            text-white/35
+          "
+        >
           Scroll
         </span>
 
-        <span className="
-          mt-2
-          h-8
-          w-px
-          bg-gradient-to-b
-          from-cyan-300
-          to-transparent
-        " />
+        <span
+          aria-hidden="true"
+          className="
+            mt-2
+            h-8
+            w-px
+            bg-gradient-to-b
+            from-cyan-300
+            to-transparent
+          "
+        />
       </div>
-
     </section>
   );
 };

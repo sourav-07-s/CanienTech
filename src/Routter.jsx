@@ -9,6 +9,7 @@ import { Insights } from "./pages/Insights";
 import { Careers } from "./pages/Careers";
 import { Contact } from "./pages/Contact";
 import { Login } from "./pages/Login";
+import { NotFound } from "./pages/NotFound";
 
 export const Router = () => {
   const router = createBrowserRouter([
@@ -45,6 +46,10 @@ export const Router = () => {
           path: "login",
           element: <Login />,
         },
+        {
+  path: "*",
+  element: <NotFound />,
+},
       ],
     },
   ]);
