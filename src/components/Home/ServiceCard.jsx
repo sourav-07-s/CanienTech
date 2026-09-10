@@ -1,7 +1,7 @@
 import Reveal from "../ui/Reveal";
 
 const ServiceCard = ({
-  icon,
+  icon: Icon,
   title,
   description,
   delay = 0,
@@ -24,12 +24,11 @@ const ServiceCard = ({
           hover:-translate-y-2
           hover:border-cyan-300/30
           hover:bg-white/[0.07]
-          hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
         "
       >
-        {/* Glow */}
         <div
           className="
+            pointer-events-none
             absolute
             -right-12
             -top-12
@@ -38,13 +37,9 @@ const ServiceCard = ({
             rounded-full
             bg-cyan-400/10
             blur-3xl
-            transition
-            duration-500
-            group-hover:bg-cyan-400/20
           "
         />
 
-        {/* Icon */}
         <div
           className="
             relative
@@ -57,14 +52,10 @@ const ServiceCard = ({
             bg-linear-to-br
             from-blue-600
             to-cyan-500
-            text-2xl
-            shadow-[0_10px_30px_rgba(34,211,238,0.12)]
-            transition-all
-            duration-500
-            group-hover:scale-110
+            text-white
           "
         >
-          {icon}
+          {Icon && <Icon size={25} strokeWidth={1.8} />}
         </div>
 
         <h3 className="relative mt-6 text-xl font-semibold text-white">

@@ -1,7 +1,16 @@
+import {
+  Cloud,
+  Brain,
+  ShieldCheck,
+  Megaphone,
+  Building2,
+  Rocket,
+} from "lucide-react";
+
 export const serviceDetails = [
   {
     id: 1,
-    icon: "☁",
+    icon: Cloud,
     title: "Cloud Solutions",
     shortDescription:
       "Scalable cloud infrastructure and migration services.",
@@ -16,7 +25,7 @@ export const serviceDetails = [
   },
   {
     id: 2,
-    icon: "◉",
+    icon: Brain,
     title: "AI & Data Analytics",
     shortDescription:
       "Turn business data into actionable intelligence.",
@@ -31,7 +40,7 @@ export const serviceDetails = [
   },
   {
     id: 3,
-    icon: "🛡",
+    icon: ShieldCheck,
     title: "Cybersecurity",
     shortDescription:
       "Protect your digital infrastructure and data.",
@@ -46,7 +55,7 @@ export const serviceDetails = [
   },
   {
     id: 4,
-    icon: "📣",
+    icon: Megaphone,
     title: "Digital Marketing",
     shortDescription:
       "Grow your digital presence and reach your audience.",
@@ -61,7 +70,7 @@ export const serviceDetails = [
   },
   {
     id: 5,
-    icon: "⌨",
+    icon: Building2,
     title: "Enterprise Solutions",
     shortDescription:
       "Technology solutions built around your business.",
@@ -76,7 +85,7 @@ export const serviceDetails = [
   },
   {
     id: 6,
-    icon: "🚀",
+    icon: Rocket,
     title: "Digital Engineering",
     shortDescription:
       "Build modern and scalable digital products.",

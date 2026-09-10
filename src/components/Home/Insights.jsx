@@ -1,6 +1,6 @@
 import SectionHeading from "../ui/SectionHeading";
 import InsightCard from "./InsightCard";
-import { insights } from "../../data/insights";
+import { insights } from "../data/insights";
 
 const Insights = () => {
   return (

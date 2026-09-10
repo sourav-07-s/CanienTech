@@ -36,7 +36,7 @@ const StatCard = ({
             font-bold
             tracking-tight
             text-white
-            transition-all
+            transition-colors
             duration-300
             group-hover:text-cyan-300
           "

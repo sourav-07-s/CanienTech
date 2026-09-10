@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Eye, EyeOff, ArrowRight } from "lucide-react";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -98,7 +99,7 @@ const LoginForm = () => {
               bg-white/[0.04]
               px-4
               py-3.5
-              pr-16
+              pr-12
               text-sm
               text-white
               outline-none
@@ -115,19 +116,31 @@ const LoginForm = () => {
           <button
             type="button"
             onClick={() => setShowPassword((value) => !value)}
+            aria-label={
+              showPassword ? "Hide password" : "Show password"
+            }
             className="
               absolute
-              right-4
+              right-3
               top-1/2
+              flex
+              h-9
+              w-9
               -translate-y-1/2
-              text-xs
-              font-medium
+              items-center
+              justify-center
+              rounded-lg
               text-white/35
               transition-colors
+              hover:bg-white/5
               hover:text-cyan-300
             "
           >
-            {showPassword ? "Hide" : "Show"}
+            {showPassword ? (
+              <EyeOff size={18} />
+            ) : (
+              <Eye size={18} />
+            )}
           </button>
         </div>
       </div>
@@ -138,11 +151,7 @@ const LoginForm = () => {
           id="remember"
           name="remember"
           type="checkbox"
-          className="
-            h-4
-            w-4
-            accent-cyan-400
-          "
+          className="h-4 w-4 accent-cyan-400"
         />
 
         <label
@@ -182,16 +191,15 @@ const LoginForm = () => {
       >
         Sign In
 
-        <span
+        <ArrowRight
+          size={17}
           className="
             ml-2
             transition-transform
             duration-300
             group-hover:translate-x-1
           "
-        >
-          →
-        </span>
+        />
       </button>
 
       {/* Security note */}

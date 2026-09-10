@@ -1,11 +1,11 @@
 import Reveal from "../ui/Reveal";
 
 const ServiceDetailCard = ({
-  icon,
+  icon: Icon,
   title,
   shortDescription,
   description,
-  features,
+  features = [],
   delay = 0,
 }) => {
   return (
@@ -28,6 +28,7 @@ const ServiceDetailCard = ({
           hover:bg-white/[0.07]
         "
       >
+        {/* Glow */}
         <div
           className="
             pointer-events-none
@@ -45,6 +46,7 @@ const ServiceDetailCard = ({
           "
         />
 
+        {/* Icon */}
         <div
           className="
             relative
@@ -57,28 +59,32 @@ const ServiceDetailCard = ({
             bg-linear-to-br
             from-blue-600
             to-cyan-500
-            text-2xl
+            text-white
             shadow-[0_10px_30px_rgba(34,211,238,0.12)]
             transition-transform
             duration-500
             group-hover:scale-110
           "
         >
-          {icon}
+          {Icon && <Icon size={25} strokeWidth={1.8} />}
         </div>
 
+        {/* Title */}
         <h2 className="relative mt-6 text-2xl font-semibold text-white">
           {title}
         </h2>
 
+        {/* Short description */}
         <p className="relative mt-2 text-sm text-cyan-300/80">
           {shortDescription}
         </p>
 
+        {/* Description */}
         <p className="relative mt-5 text-sm leading-7 text-white/50">
           {description}
         </p>
 
+        {/* Features */}
         <div className="relative mt-7 border-t border-white/10 pt-6">
           <p
             className="
@@ -96,13 +102,7 @@ const ServiceDetailCard = ({
             {features.map((feature) => (
               <div
                 key={feature}
-                className="
-                  flex
-                  items-center
-                  gap-2
-                  text-sm
-                  text-white/60
-                "
+                className="flex items-center gap-2 text-sm text-white/60"
               >
                 <span
                   className="
