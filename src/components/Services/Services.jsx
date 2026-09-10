@@ -1,8 +1,8 @@
-import ServiceHero from "../components/Services/ServiceHero";
-import ServiceDetailCard from "../components/Services/ServiceDetailCard";
-import { serviceDetails } from "../components/data/serviceDetails";
+import ServiceHero from "./ServiceHero";
+import ServiceDetailCard from "./ServiceDetailCard";
+import { serviceDetails } from "../data/serviceDetails";
 
-export const Services = () => {
+const Services = () => {
   return (
     <>
       <ServiceHero />
@@ -46,3 +46,5 @@ export const Services = () => {
     </>
   );
 };
+
+export default Services;
