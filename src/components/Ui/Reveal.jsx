@@ -12,6 +12,9 @@ const Reveal = ({ children, delay = 0 }) => {
         transition-all
         duration-700
         ease-out
+        motion-reduce:transform-none
+        motion-reduce:transition-none
+        motion-reduce:opacity-100
         ${
           visible
             ? "translate-y-0 opacity-100"

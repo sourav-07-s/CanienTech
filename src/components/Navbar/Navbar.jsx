@@ -140,6 +140,7 @@ const Navbar = () => {
             type="button"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
             onClick={() => setMenuOpen((open) => !open)}
             className="
               flex
@@ -189,19 +190,21 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`
-            overflow-hidden
-            transition-all
-            duration-300
-            lg:hidden
-            ${
-              menuOpen
-                ? "max-h-[500px] pt-3 opacity-100"
-                : "max-h-0 opacity-0"
-            }
-          `}
-        >
+      {/* Mobile Menu */}
+<div
+  id="mobile-navigation"
+  className={`
+    overflow-hidden
+    transition-all
+    duration-300
+    lg:hidden
+    ${
+      menuOpen
+        ? "max-h-[500px] pt-3 opacity-100"
+        : "max-h-0 opacity-0"
+    }
+  `}
+>
           <div
             className="
               rounded-3xl
