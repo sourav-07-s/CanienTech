@@ -1,7 +1,11 @@
-import React from 'react'
+import InsightsHero from "../components/Insights/InsightsHero";
+import InsightsGrid from "../components/Insights/InsightsGrid";
 
 export const Insights = () => {
   return (
-    <div>Insights</div>
-  )
-}
+    <>
+      <InsightsHero />
+      <InsightsGrid />
+    </>
+  );
+};

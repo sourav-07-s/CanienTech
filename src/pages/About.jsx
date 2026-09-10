@@ -1,7 +1,13 @@
-import React from 'react'
+import AboutHero from "../components/About/AboutHero";
+import AboutStory from "../components/About/AboutStory";
+import AboutValues from "../components/About/AboutValues";
 
 export const About = () => {
   return (
-    <div>About</div>
-  )
-}
+    <>
+      <AboutHero />
+      <AboutStory />
+      <AboutValues />
+    </>
+  );
+};

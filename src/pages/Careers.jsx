@@ -1,7 +1,11 @@
-import React from 'react'
+import CareersHero from "../components/Careers/CareersHero";
+import CareersOpenings from "../components/Careers/CareersOpenings";
 
 export const Careers = () => {
   return (
-    <div>Careers</div>
-  )
-}
+    <>
+      <CareersHero />
+      <CareersOpenings />
+    </>
+  );
+};
