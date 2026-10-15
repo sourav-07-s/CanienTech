@@ -1,3 +1,5 @@
+import { Link } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
 import Reveal from "../ui/Reveal";
 
 const JobCard = ({
@@ -150,30 +152,33 @@ const JobCard = ({
           </div>
         </div>
 
-        <button
-          type="button"
-          className="
-            relative
-            mt-7
-            w-full
-            rounded-xl
-            border
-            border-cyan-300/20
-            bg-cyan-400/10
-            px-5
-            py-3
-            text-sm
-            font-medium
-            text-cyan-300
-            transition-all
-            duration-300
-            hover:border-cyan-300/35
-            hover:bg-cyan-400/20
-            hover:text-white
-          "
+        <RouterLink
+        to="/contact"
+  className="
+    relative
+    mt-7
+    block
+    w-full
+    rounded-2xl
+    border
+    border-cyan-300/20
+    bg-cyan-400/10
+    px-5
+    py-3
+    text-center
+    text-sm
+    font-medium
+    text-cyan-300
+    transition-all
+    duration-300
+    hover:border-cyan-300/35
+    hover:bg-cyan-400/20
+    hover:text-white
+  "
         >
           Apply Now →
-        </button>
+         </RouterLink>
+        
       </article>
     </Reveal>
   );
